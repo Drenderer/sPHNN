@@ -1,0 +1,31 @@
+[project]
+name = "sphnn"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "Fabian Roth", email = "roth@cps.tu-darmstadt.de" }]
+requires-python = ">=3.12"
+dependencies = [
+    "cyberplotstyle>=0.1.0",
+    "dynax>=0.1.0",
+    "matplotlib>=3.10.7",
+    "pandas>=2.3.3",
+    "sacred>=0.8.7",
+    "setuptools<81",
+]
+
+[tool.uv.sources]
+dynax = { git = "https://github.com/Drenderer/dynax.git", rev = "92261946883c67edc70e2b8114aacf459d6a2f60" }
+cyberplotstyle = { git = "https://github.com/Drenderer/cyberplotstyle.git", rev = "main" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.0.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["sphnn"]
