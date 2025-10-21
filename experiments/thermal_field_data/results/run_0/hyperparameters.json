@@ -23,6 +23,13 @@
         "weight_initialization": "glorot_uniform",
         "bias_initialization": "zeros"
     },
+    "sPHNN-LM": {
+        "ficnn_width": 32,
+        "ficnn_depth": 2,
+        "weight_initialization": "glorot_uniform",
+        "bias_initialization": "zeros",
+        "minimum_initializer_std": 0.1
+    },
     "PHNN": {
         "mlp_width": 32,
         "mlp_depth": 2,
