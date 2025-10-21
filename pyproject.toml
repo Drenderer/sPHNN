@@ -1,31 +1,41 @@
 [project]
-name = "sphnn"
-version = "0.1.0"
-description = "Add your description here"
+name = "sPHNN"
+version = "0.1"
+description = "Machine learning tools for dynamic systems and more build on JAX"
+authors = [
+    { name = "Fabian Roth", email = "roth@cps.tu-darmstadt.de" },
+]
+maintainers = [
+    { name = "Fabian Roth", email = " roth@cps.tu-darmstadt.de" }
+]
 readme = "README.md"
-authors = [{ name = "Fabian Roth", email = "roth@cps.tu-darmstadt.de" }]
-requires-python = ">=3.12"
+requires-python = ">=3.10, <3.12"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent "
+]
 dependencies = [
-    "cyberplotstyle>=0.1.0",
-    "dynax>=0.1.0",
-    "matplotlib>=3.10.7",
-    "pandas>=2.3.3",
-    "sacred>=0.8.7",
-    "setuptools<81",
+    "diffrax == 0.5.1", # Numerical integration for NODEs
+    "equinox == 0.11.4", # Easy NNs and more
+    "jax == 0.4.28", # Automatic differentiation, vectorization and parallelization
+    "jaxlib == 0.4.28", # Is needed for JAX - i think?
+    "matplotlib == 3.9.0", # Plotting
+    "numpy == 1.26.4",
+    "optax == 0.2.2", # Implementations of many optimizers for ML
+    "scipy == 1.13.1",
+    "meshio == 5.3.5",
+    "pyvista == 0.44.2",
+    "phaseportrait",
+    "ipykernel",
+    "pandas>=2.3.1",
+    "tabulate>=0.9.0",
+    "pyqt6>=6.9.1",
+    "great-tables>=0.18.0",
+    "pyvistaqt>=0.11.3",
+    "jinja2>=3.1.6",
 ]
 
-[tool.uv.sources]
-dynax = { git = "https://github.com/Drenderer/dynax.git", rev = "92261946883c67edc70e2b8114aacf459d6a2f60" }
-cyberplotstyle = { git = "https://github.com/Drenderer/cyberplotstyle.git", rev = "main" }
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[dependency-groups]
-dev = [
-    "ipykernel>=7.0.0",
-]
-
-[tool.hatch.build.targets.wheel]
-packages = ["sphnn"]
+[tool.pyright]
+venvPath = "."
+venv = ".venv"

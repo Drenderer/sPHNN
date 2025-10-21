@@ -1,0 +1,12 @@
+# Python version: 3.11.9
+diffrax==0.5.1          # Numerical integration for NODEs
+equinox==0.11.4         # Easy NNs and custom models
+jax==0.4.28             # Automatic differentiation, vectorization and parallelization
+jaxlib==0.4.28          # Is needed for JAX - i think?
+matplotlib==3.9.0       # Plotting
+numpy==1.26.4
+optax==0.2.2            # Implementations of many optimizers for ML
+scipy==1.13.1
+meshio==5.3.5           # Visualizations for additive manufacturing surrogate
+pyvista==0.44.2         # Visualizations for additive manufacturing surrogate
+ipykernel               # For jupyter notebooks
